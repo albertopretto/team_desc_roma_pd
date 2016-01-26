@@ -158,6 +158,21 @@ The SPQR@Work robot (Fig.~\ref{fig:robot}) is a KUKA youBot with the following s
  \item An on-board laptop running Linux Ubuntu 14.04, to be used to run \textit{all} the software modules (e.g., navigation, object recognition, etc...). The internal youBot Intel Atom PC is not used.
  \item A color USB3 high-resolution camera on the 5th joint of the manipulator for accurate object localization
 \end{itemize}
+
+The team is now actively working in improving the hardware configuration of the KUKA youBot, in particular modifications will involve both the sensors installed on the robot and
+the structural layout itself.\\
+A new Hokuyo laser scanner will be installed in the rear of the robot in order to improve navigation and obstacles avoidance.\\
+For the object recognition and localization a new sensor will replace the current Kinect RGB-D sensor: \emph{Intel realsense f200} (https://software.intel.com/en-us/realsense/f200camera).\\
+A novel gripper design is under development. A preliminary draft of this gripper is shown in Fig. \ref{fig:gripper_design}. The new mechanism is able to grasp bigger objects with a maximum finger opening equal to 135 mm. Motion is actuated by a Robotis AX-12A Servomotor, which offers higher torque when compared to the stock motor and allows for improved accuracy thanks to its embedded encoders and control. Most of the non-commercial parts of the novel design are optimized for production through 3D printing.
+\\Furthermore, the layout of the KUKA youBot base platform will be enhanced in order to increase the workspace.
+
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[angle=0,width=0.7\linewidth,]{images/gripper_design.png}
+\end{center}
+\caption{The new gripper design.}\label{fig:gripper_design}
+\end{figure}
+
  
 \subsection{Software Configuration}
 
