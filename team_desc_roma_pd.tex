@@ -45,14 +45,14 @@ Email: {\tt\small marcoimperoli@gmail.com, evangelista.1665872@studenti.uniroma1
 {\tt\small valerio.sanelli@gmail.com, matteo.russo@unicas.it, \{pretto,nardi\}@dis.uniroma1.it}\\
 Website: http://www.dis.uniroma1.it/~labrococo/SPQRWork}}
 
+
 % make the title area
 \maketitle
-
 
 \begin{abstract}
 %\boldmath
 The SPQR@Work team is a spin-off of the S.P.Q.R. RoboCup team of the Department of Computer, Control, and Management Engineering “Antonio Ruberti” at Sapienza University of Rome, created to participate at the RoCKIn@Work competition.\\
-This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2014 RoCKIn competition event.
+This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2015 RoCKIn competition event.
 \end{abstract}
 
 \section{Introduction}
@@ -71,7 +71,7 @@ The team involves both PhD students and graduated students, members of the Cogni
 SPQR@Work goals are the following:
 \begin{itemize}
  \item Set up a team to successfully compete in RoCKIn@Work competition.
- \item Propose and test new techniques for (1) RGB-D metrical mapping, (2) RGB-D object recognition and (3) semantic mapping, in order to properly execute difficult tasks.
+ \item Propose and test new techniques for (1) RGB-D object recognition and localization (2) Object manipulation and grasping (3) Robot Navigation and Planning.
  \item Promote teaching initiatives to foster the participation of students in research on intelligent mobile robotics.
 \end{itemize}
  
@@ -81,24 +81,26 @@ SPQR@Work goals are the following:
 \begin{itemize}
  \item \textbf{Team name:} SPQR@Work
  \item \textbf{Selected track:} RoCKIn@Work
- \item \textbf{Team members:} Marco Imperoli, Daniele Evangelista, Valerio Sanelli, Matteo Russo
-  \item \textbf{Team leader:} Alberto Pretto
- \item \textbf{Advisors:} Daniele Nardi
+<<<<<<< HEAD
+ \item \textbf{Team members:} Daniele Evangelista, Valerio Sanelli, Matteo Russo
+  \item \textbf{Team leader:} Marco Imperoli
+ \item \textbf{Advisors:} Alberto Pretto, Daniele Nardi
  \item \textbf{Robot:} 1 Kuka youBot
 \end{itemize}
 
 \subsection{Involved Institutions}
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=270,width=0.8\linewidth]{images/test_img.png}
+\includegraphics[width=\linewidth]{images/kuka.JPG}
 \end{center}
-\caption{The SPQR@Work robot: the laptop is used for computationally expensive tasks (localization, mapping, object recognition, \dots) while the internal standard Intel Atom PC is used for low-level motions controls (platform and arm).}\label{fig:robot}
+\caption{The SPQR@Work robot}\label{fig:robot}
 \end{figure}
 
 \subsubsection{RoCoCo} The laboratory RoCoCo (Cognitive Cooperating Robots) is located at DIAG (Dipartimento di Ingegneria Informatica, Automatica e Gestionale) of Sapienza University of Rome, Italy.
 The research developed at RoCoCo laboratory is in the area of Artificial Intelligence and Robotics: Lab RoCoCo has a strong background in knowledge representation and reasoning, cognitive robotics, information fusion, mapping and localization, object recognition and tracking. multi-robot coordination, robot learning, stereo-vision, vision-based people detection. RoCoCo has been involved in RoboCup competitions since 1998 in different leagues.\\
 
 \subsection{Competence of Team Members}
+
 \subsubsection*{Marco Imperoli}
 Imperoli is a student of the Master degree in Artificial Intelligence and Robotics Engineering at Sapienza University of Rome.
 
@@ -129,19 +131,20 @@ Mechanism synthesis and analysis for robotics, industrial robots and fast protot
 %In November 2013 he started the Ph.D. program in engineering in computer science. His areas of interest include mobile robotics, computer vision, acquisition of 3D models / maps, SLAM and least-squares estimation problems.
 
 \subsubsection*{Alberto Pretto}
-Pretto is Assistant Professor at at Sapienza University of Rome since October 2013. 
+
+Pretto is Assistant Professor at Sapienza University of Rome since October 2013. 
 He received his Ph.D. degree in October 2009 from the University of Padua, where he worked as a postdoctoral researcher at the Intelligent Autonomous Systems Lab (Department of Information Engineering). 
-% Between 2011 and 2012 he spent a 9 months visiting research fellowships at the UCLA VisionLab, Los Angeles (USA).
-% In 2004 and 2005, he has been working as software engineer at Padua Ricerca Scpa. 
 In 2005, he was one of the funders of IT+Robotics Srl, a spin-off company of the University of Padua working on robotics and machine vision. 
 Alberto Pretto's main research activities include vision-based 3D reconstruction, visual-inertial navigation, and object recognition.
+
 \subsubsection*{Daniele Nardi}
+
 Nardi is Full Professor at DIS, where he was employed since 1986. His current research interests are in the field of artificial intelligence and cognitive robotics. He is Trustee of RoboCup and currently the president of the RobotCup Federation.  From 2005-2008, he also served as the co-chair of IEEE Technical Committee of International Workshop on Safety, Security and Rescue Robotics.  He is active in the context of autonomous rescue robots and successfully coordinated a team participating on several editions of RoboCup Rescue since the year 2002.  
 Nardi received the ``IJCAI-91 Publisher's Prize'' and the prize ``Intelligenza Artificiale 1993'' from the Associazione Italiana per l'Intelligenza Artificiale (AI*IA).
 
-
 \subsection{RoCKIn Events participations}
-Serafin and Capobianco participated at the RoCKIn Camp 2014 with the ``SPQR Team''. ``SPQR'' won in ex-aequo with another team the ``Best Practical in Perception'' award.
+
+Imperoli and Pretto participated at the RoCKIn Camp 2014, RoCKIn Competition 2015, and RoCKIn Camp 2015, with the ``SPQR Team''. In RoCKIn Camp 2014, ``SPQR'' won in ex-aequo with another team the ``Best Practical in Perception'' award.
 
 \section{Robot Description}
 
@@ -152,18 +155,26 @@ The SPQR@Work robot (Fig.~\ref{fig:robot}) is a KUKA youBot with the following s
 \begin{itemize}
  \item A frontal Hokuyo laser scanner, to be used for navigation and obstacles avoidance tasks
  \item A Kinect RGB-D sensor: the area viewed by the kinect includes the working area of the arm, in order to perform object manipulation tasks without robot motions
- \item An on-board laptop (other than the internal standard Intel Atom PC) running Linux Ubuntu 12.04, to be used to execute the perception and planning tasks (e.g., navigation and object recognition)
- \item A color USB camera on the 5th joint of the manipulator for accurate object localization
+ \item An on-board laptop running Linux Ubuntu 14.04, to be used to run \textit{all} the software modules (e.g., navigation, object recognition, etc...). The internal youBot Intel Atom PC is not used.
+ \item A color USB3 high-resolution camera on the 5th joint of the manipulator for accurate object localization
 \end{itemize}
  
 \subsection{Software Configuration}
 
-The SPQR@Work software infrastructure is based on the ROS Indigo middleware running on Ubuntu 14.04, nevertheless most of the developed software tools are stand-alone, middleware-agnostic: packages are integrated within ROS by means of suitable wrappers.\\
-The navigation stack is based on particle filter based localization and mapping algorithms, provided by the ROS AMCL and GMapping packages, the latter implemented by one member of the laboratory RoCoCo. The decision making and planning stacks are based on a finite state machine implemented with the ROS Actionlib and MoveBase packages, while manipulation tasks are performed using the MoveIT! ROS package.
-3D environment reconstruction is obtained using an effective and efficient registration method called PWN (Point With Normals) (Sec.~\ref{sec:pwn}). 
-PWN takes advantage of the 3D structure in determining the data association between two clouds by considering each point along with the statistics of the local surface and of the measurement noise. A novel formulation has been proposed to address the computation of the alignment that takes advantage of point position and surface normals.\\
+The SPQR@Work software infrastructure is based on the ROS Indigo middleware \cite{rosweb} running on Ubuntu 14.04, nevertheless most of the developed software tools are stand-alone, middleware-agnostic: packages are integrated within ROS by means of suitable wrappers.\\
+The navigation stack is based on particle filter based localization and mapping algorithms, provided by the ROS AMCL and GMapping \cite{Grisetti2007} packages, the latter implemented by one member of the laboratory RoCoCo.  Tha base motion planning task is accomplished using two different subsystems (see Fig.~\ref{fig:intro_navigation}):
+\begin{itemize}
+ \item A global planner, which provides the global path to follow, based on the standard MoveBase ROS package;
+ \item A custom-built local planner, which, given the global plan and a costmap, produces
+velocity commands to send to the mobile base controller.
+\end{itemize}
+Our ad hoc local planner is based on artificial potential fields, designed for holonomic mobile robots.\\
 
-Object recognition and localization is obtained using reliable algorithms that exploit both vision features and depth information (Sec.~\ref{sec:object_rec}). This module includes a pipeline of processing blocks (Fig.~\ref{fig:pipeline}): the pipeline includes processing blocks for sub-sampling, clustering, noise reduction, and 2D and 3D features detection and descriptors. The model matching step is performed associating the extracted features with features pre-computed from a rigid template (e.g., the CAD model) of the object, sample consensus methods is then used to reduce outliers. The result is a set of object candidates, that is refined using an iterative optimization strategy. 
+We use a custom-built module also for the manipulation and the grasping tasks: the arm motion planner we propose is able to plan accurate trajectories assuming that the best way to grasp an object disposed in an crowded environment is to let the gripper follows a straight line in the Cartesian space towards the object of interest.\\
+
+Object recognition and localization is obtained using reliable algorithms that exploit both vision features and depth information (Sec.~\ref{sec:object_rec}). This module includes a pipeline of processing blocks (Fig.~\ref{fig:pipeline}): the pipeline includes processing blocks for sub-sampling, clustering, noise reduction, and 2D and 3D features detection and descriptors. The model matching step is performed associating the extracted features with features pre-computed from a rigid template (e.g., the CAD model) of the object. The result is a set of object candidates, that is refined using an novel object registration strategy. \\
+
+The decision making module is based on a finite state machine implemented with the ROS Actionlib package.\\
 
 \begin{figure*}[t!]
 \begin{center}
@@ -172,58 +183,92 @@ Object recognition and localization is obtained using reliable algorithms that e
 \caption{The SPQR@Work object recognition and localization pipeline.}\label{fig:pipeline}
 \end{figure*}
 
-Both the mapping and the object recognition modules have been internally implemented by the team members.
-Moreover, the SPQR@Work software includes a semantic mapping system in order to obtain a rich and meaningful representation of the environment (see Sec.~\ref{sec:semantic_map}).\\
-
 Currently, the SPQR@Work robot is able to:
 
 \begin{itemize}
  \item Localize itself and safely navigate toward a selected target area
- \item Build detailed 3D maps of the surrounding environment
- \item Detect QR code-like markers using vision (using the datamatrix\_finder ROS package, modified by the SPQR@Work team members)
- \item Recognize and localize objects using RGB-D sensors, using the techniques proposed in \cite{antonelloVISIGRAPP2014} and \cite{prettoCASE2013}
- \item Perform simple visual servoing and manipulation tasks (e.g., pick and place task, ``cutting a string'' task, \dots)
- \item Capture and understand simple audio signals from the environment
+ \item Detect QR code-like markers using vision
+ \item Recognize and localize objects using RGB-D sensors, using the techniques proposed in \cite{miap_icvs2015} and \cite{prettoCASE2013}
+ \item Perform simple visual-servoing and manipulation tasks (e.g., pick and place task, ``cutting a string'' task, \dots)
 \end{itemize}
-
  
 \section{Research areas and Contributions}\label{sec:research}
 
-Several research areas are involved in the SPQR@Work team development, and some novel contributions have been proposed. Among others, PWN (Sec.~\ref{sec:pwn}), a semantic mapping and learning system (Sec.~\ref{sec:semantic_map}) and a flexible 3D localization system for industrial bin-picking (Sec.~\ref{sec:object_rec}).
+Several research areas are involved in the SPQR@Work team development, and some novel contributions have been proposed. Among others, a novel registration method of 3D textureless objects (Sec.~\ref{sec:object_rec}) and an arm motion planner well suited to plan
+accurate trajectories also in an crowded environment (Sec.~\ref{sec:manipulation}).
 
-\subsubsection{Point Cloud Registration}\label{sec:pwn}
-
-\begin{figure}[t!]
-\begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/pwn.png}
-\end{center}
-\caption{A 3D scene reconstructed from 3D scans. Top: initial guess. Middle: reconstruction with PWN, done in about 2.16s. Bottom: reconstruction with Generalized ICP, done in about 13.35s. The corridor looks shortened due to a missing frame that caused GICP to fail.}\label{fig:pwn}
-\end{figure}
-
-3D models of objects and environments are of utmost importance for a wide range of robotic applications such as navigation, object recognition, manipulation and many others. Hence, being able to acquire these models with the on-board sensors is a necessary precondition for a truly autonomous mobile robot. 3D data can be represented in different ways, one of them is using point clouds. In the past years many point cloud registration algorithms were developed; these algorithms are procedures used to compute the translation and rotation that maximize the overlap between two point clouds. Point cloud registration is a fundamental building block for a lot of robotic functionalities like odometry reconstruction, SLAM, navigation and 3D object scanning. During his M.Sc. thesis, Jacopo Serafin developed a new point cloud registration approach (Fig.~\ref{fig:pwn}). He proposed a novel formulation to address the computation of the alignment that takes advantage of point position and surface normals. Additionally, he presented a fast method to merge registered point clouds, while refining the point positions and reducing the number of points. This new approach has been named Point With Normal aligner (PWN in short).   
-
-\subsubsection{Semantic Mapping and Learning}\label{sec:semantic_map}
-In order to properly act in a complex way and execute difficult tasks, robotics systems need a deep knowledge of the environments and the objects in it. Knowledge representation in robotics, however, is a challenging problem, since not only the chosen abstraction may affect the performance of the robot, but also different kinds of knowledge, depending on the context, may be needed in order to implement complex behaviors. In the case of robots that operate in a physical environment, it is required to “close the loop” with perception, thus defining the relationship between numeric and symbolic representation. During his Master Thesis, Roberto Capobianco worked on a system that incrementally builds a rich representation of the environment, exploiting human-robot interaction in order to perform a collaborative lifelong learning task and to solve ambiguities and possible conflicts in the acquired knowledge \cite{bastianelli2013line}\cite{bastianelliBCGIN13}. Such an interactive approach will be extended to different learning tasks in order to improve the current capabilities of the robots.
 
 \subsubsection{Object Recognition and Localization}\label{sec:object_rec}
-A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoCKIn competitions. The SPQR@Work team members presented a robust and flexible vision system for 3D localization of objects for industrial robots \cite{prettoCASE2013} (Fig.~\ref{fig:obj_rec}). This system can estimate the 6 degrees of freedom (DoF) pose of planar objects from a single 2D image.
-The localization software is based on a two step strategy: i) a candidate selection step based on a well-engineered voting scheme ii) a refinement and best match selection step based on a robust iterative optimize-and-score procedure. During this second step, a novel strategy called search-in-the-stack is employed, that avoids the optimization from being stuck on local minima (representing false positives) created when objects are almost regularly stacked.
 
-\subsubsection{Obstacle Avoidance and Manipulation}\label{sec:manipulation}
-In order to obtain a reliable robot navigation, SPQR@Work team members implemented an efficient obstacle avoidance system for mobile robots equipped with range finder sensors, based on the online computation of local artificial potential fields. \newline In the field of manipulation, an effective framework for handling task priority of redundant manipulators has been studied and developed.
+A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoCKIn competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015, prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
+
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/result_number01_small.jpg}
+\includegraphics[angle=0,width=\linewidth]{images/d2co_00.png}
 \end{center}
-\caption{Final results of the proposed localization system.}\label{fig:obj_rec}
+\caption{The raster models used in our algorithms are computed from the 3D CAD models of the objects.}\label{fig:obj_model}
 \end{figure}
+The Directional Chamfer Distance (DCD) tensor encodes the minimum distance of an image point to an edge point in a joint direction/location space. Unlike the Chamfer distance, the DCD takes into account also the edges directions (see Fig.~\ref{fig:tensor}).
+
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[angle=0,width=\linewidth]{images/d2co_01.png}
+\end{center}
+\caption{DCD tensor computation pipeline.}\label{fig:tensor}
+\end{figure}
+
+We extract a set of object candidates by pre-computing the (projected) raster templates along with their image orientations for a large number of possible 3D locations; for each point, we lookup the DCD tensor, computing the template average distance. The templates are then sorted for increasing distances.\\
+
+D\textsuperscript{2}CO finally refines the object position employing a non-linear optimization procedure that minimizes a tensor-based cost function (e.g., see Fig.~\ref{fig:sample_d2co}). We use the LM algorithm with a Huber loss function in order to reduces the influence of outliers. During the optimization, both the (projected) points position and the (projected) points orientation are constantly updated.
+
+\begin{figure}[t!]
+\begin{center}
+\includegraphics[angle=0,width=\linewidth]{images/d2co_02.png}
+\end{center}
+\caption{An example of object registration using the D\textsuperscript{2}CO algorithm.}\label{fig:sample_d2co}
+\end{figure}
+
+\subsubsection{Object Manipulation and Grasping}\label{sec:manipulation}
+
+Very often, the objects to be manipulated are randomly disposed in cluttered environments: a precise, smooth and safe arm trajectory planning is an essential requirement. The arm motion planner we propose is able to plan accurate trajectories assuming that the best way to grasp an object disposed in an crowded environment is to let the gripper follows a straight line in the Cartesian space towards the object of interest. Thanks to our obstacles avoidance system, each planned path is guaranteed to be free from collisions, and very accurate object grasping and placing are performed. In order to accomplish the manipulation task, we have defined a set of arm control points along with two different obstacles representations: spherical and box obstacles (e.g., see Fig.~\ref{fig:intro_manipulation}). Using these primitives, our trajectory planner can easily compute collision-free paths. 
+
+\begin{figure}[h!]
+\begin{center}
+\begin{minipage}[b]{0.32\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/av7.png}\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/av8.png}\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.32\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/av9.png}\end{center}
+\end{minipage}\hfill
+\end{center}
+\caption{Visualization of three different points of view of the same scene using our OpenGL GUI. The manipulator control points and the obstacles are rendered in white and red respectively. The yellow path represents the planned end-effector trajectory. }\label{fig:intro_manipulation}
+\end{figure}
+
+
+\subsubsection{Robot Navigation and Planning}\label{sec:navigation}
+
+
+In our experience, we found that the existing navigation frameworks (e.g., the popular ``move\_base'' package of the ROS framework \cite{rosweb}) usually depends on a large number of parameters: it is usually very difficult to find a good parameters set that enables a reliable and safe navigation in most of the conditions. To address this problem, we developed an ad hoc \textit{local} planner based on artificial potential fields, designed for holonomic mobile robots. The idea is to use an existing navigation framework as a primary navigation system, focusing on the planning reliability and safety. Our local planner is then used only for refinement purposes, improving the accuracy (see Fig.~\ref{fig:intro_navigation}).
+
+\begin{figure}[h!]
+\begin{center}
+\begin{minipage}[b]{0.6\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/navigation.png}\end{center}
+\end{minipage}\hfill
+\end{center}
+\caption{An example of navigation path (dark gray). The curved portion of the entire path is computed by the primary navigation planner. Our potential fields based planner is used for approaching the final target (red) and for sliding away from obstacles at the beginning of the navigation task (blue).}\label{fig:intro_navigation}
+\end{figure}
+
+Moreover, in order to improve the whole navigation system, we adopt a robot odometry refinement technique, that allows to enhance the robot localization accuracy. This method performs a fast matching between the incoming laser scans. The robot odometry is then updated according with the displacement computed by a scan matcher.\\
 
 \section{Reusability and Relevance to Industrial Robotics}
 
 \begin{itemize}
- \item PWN (Sec.~\ref{sec:pwn}) became a basic block for a novel traversability analysis algorithm described by Bogoslavskyi et al. in~\cite{bogoslavskyi-ECMR-13}.
- \item The proposed object recognition and localization systems (Sec.~\ref{sec:object_rec}) is currently installed in seven real world industrial plants \footnote{E.g., https://www.youtube.com/watch?v=jqhuEjnDdfI}, with different setups, working with hundreds of different models and successfully guiding the manipulators to pick several hundreds of thousands of pieces per year. 
- \item The proposed task priority manager (Sec.~\ref{sec:manipulation}) is currently implemented inside a real 3D industrial simulator for the off-line programming of workcells and machines with several axis.  \footnote{http://www.it-robotics.it/products/3d-simulation/workcellsimulator/?lang=en}
+ \item Some modules of the proposed object recognition and localization systems (Sec.~\ref{sec:object_rec}) is currently installed in seven real world industrial plants \footnote{E.g., https://www.youtube.com/watch?v=jqhuEjnDdfI}, with different setups, working with hundreds of different models and successfully guiding the manipulators to pick several hundreds of thousands of pieces per year. 
+ \item Our current arm trajectory planning and control system rivals other state-of-the-art planning frameworks (e.g., MoveIt! \cite{moveitweb}). We aim to further improve this module and possibly to make it publicly available.
 \end{itemize}
 
 \bibliographystyle{IEEEtran}
@@ -231,5 +276,3 @@ In order to obtain a reliable robot navigation, SPQR@Work team members implement
 
 % that's all folks
 \end{document}
-
-
