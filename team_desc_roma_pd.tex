@@ -43,7 +43,7 @@
 \IEEEauthorblockA{Department of Computer, Control, and Management Engineering\\``Antonio Ruberti``, Sapienza University of Rome, Italy.\\ 
 Email: {\tt\small marcoimperoli@gmail.com, evangelista.1665872@studenti.uniroma1.it,}\\
 {\tt\small valerio.sanelli@gmail.com, matteo.russo@unicas.it, \{pretto,nardi\}@dis.uniroma1.it}\\
-Website: http://www.dis.uniroma1.it/~labrococo/SPQRWork}}
+Website: \url{http://www.dis.uniroma1.it/~labrococo/SPQRWork}}}
 
 
 % make the title area
@@ -51,8 +51,8 @@ Website: http://www.dis.uniroma1.it/~labrococo/SPQRWork}}
 
 \begin{abstract}
 %\boldmath
-The SPQR@Work team is a spin-off of the S.P.Q.R. RoboCup team of the Department of Computer, Control, and Management Engineering “Antonio Ruberti” at Sapienza University of Rome, created to participate at the RoCKIn@Work competition.\\
-This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2015 RoCKIn competition event.
+The SPQR@Work team is a spin-off of the S.P.Q.R. RoboCup team of the Department of Computer, Control, and Management Engineering “Antonio Ruberti” at Sapienza University of Rome, created in 2014 to participate at the 2014 RoCKIn@Work competition.\\
+This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2016 RoboCup competition event.
 \end{abstract}
 
 \section{Introduction}
@@ -70,8 +70,8 @@ The team involves both PhD students and graduated students, members of the Cogni
 
 SPQR@Work goals are the following:
 \begin{itemize}
- \item Set up a team to successfully compete in RoCKIn@Work competition.
- \item Propose and test new techniques for (1) RGB-D object recognition and localization (2) Object manipulation and grasping (3) Robot Navigation and Planning.
+ \item Set up a team to successfully compete in RoboCup@Work competition.
+ \item Propose and test new techniques for (1) RGB-D textureless object recognition and localization (2) Object manipulation and grasping (3) Robot Navigation and Planning.
  \item Promote teaching initiatives to foster the participation of students in research on intelligent mobile robotics.
 \end{itemize}
  
@@ -80,7 +80,7 @@ SPQR@Work goals are the following:
 
 \begin{itemize}
  \item \textbf{Team name:} SPQR@Work
- \item \textbf{Selected track:} RoCKIn@Work
+ \item \textbf{Team website:} \\\url{www.dis.uniroma1.it/~labrococo/SPQRWork}\footnote{Do not cut and paste the url because you may have problems with the tilde symbol}, with some demo videos
  \item \textbf{Team members:} Daniele Evangelista, Valerio Sanelli, Matteo Russo
   \item \textbf{Team leader:} Marco Imperoli
  \item \textbf{Advisors:} Alberto Pretto, Daniele Nardi
@@ -143,9 +143,9 @@ Alberto Pretto's main research activities include vision-based 3D reconstruction
 Nardi is Full Professor at DIS, where he was employed since 1986. His current research interests are in the field of artificial intelligence and cognitive robotics. He is Trustee of RoboCup and currently the president of the RobotCup Federation.  From 2005-2008, he also served as the co-chair of IEEE Technical Committee of International Workshop on Safety, Security and Rescue Robotics.  He is active in the context of autonomous rescue robots and successfully coordinated a team participating on several editions of RoboCup Rescue since the year 2002.  
 Nardi received the ``IJCAI-91 Publisher's Prize'' and the prize ``Intelligenza Artificiale 1993'' from the Associazione Italiana per l'Intelligenza Artificiale (AI*IA).
 
-\subsection{RoCKIn Events participations}
+\subsection{Past Events Participations}
 
-Imperoli and Pretto participated at the RoCKIn Camp 2014, RoCKIn Competition 2015, and RoCKIn Camp 2015, with the ``SPQR Team''. In RoCKIn Camp 2014, ``SPQR'' won in ex-aequo with another team the ``Best Practical in Perception'' award.
+The team participated at the RoCKIn Camp in 2014 and 2015 and at the RoCKIn competition in 2014 and 2015. In the RoCKIn Camp 2014, ``SPQR@Work'' won in ex-aequo with another team the ``Best Practical in Perception'' award.
 
 \section{Robot Description}
 
@@ -156,12 +156,11 @@ The SPQR@Work robot (Fig.~\ref{fig:robot}) is a KUKA youBot with the following s
 \begin{itemize}
  \item A frontal Hokuyo laser scanner, to be used for navigation and obstacles avoidance tasks
  \item A Kinect RGB-D sensor: the area viewed by the kinect includes the working area of the arm, in order to perform object manipulation tasks without robot motions
- \item An on-board laptop running Linux Ubuntu 14.04, to be used to run \textit{all} the software modules (e.g., navigation, object recognition, etc...). The internal youBot Intel Atom PC is not used.
+ \item An on-board laptop running Linux Ubuntu 14.04, to be used to run all the software modules (e.g., navigation, object recognition, etc...). The internal youBot Intel Atom PC is not used.
  \item A color USB3 high-resolution camera on the 5th joint of the manipulator for accurate object localization
 \end{itemize}
 
-The team is now actively working in improving the hardware configuration of the KUKA youBot, in particular modifications will involve both the sensors installed on the robot and
-the structural layout itself.\\
+The team is now actively working in improving the hardware configuration of the KUKA youBot, in particular modifications will involve both the sensors installed on the robot and the structural layout itself.\\
 A new Hokuyo laser scanner will be installed in the rear of the robot in order to improve navigation and obstacles avoidance.\\
 For the object recognition and localization a new sensor will replace the current Kinect RGB-D sensor: \emph{Intel realsense f200} (https://software.intel.com/en-us/realsense/f200camera).\\
 A novel gripper design is under development. A preliminary draft of this gripper is shown in Fig. \ref{fig:gripper_design}. The new mechanism is able to grasp bigger objects with a maximum finger opening equal to 135 mm. Motion is actuated by a Robotis AX-12A Servomotor, which offers higher torque when compared to the stock motor and allows for improved accuracy thanks to its embedded encoders and control. Most of the non-commercial parts of the novel design are optimized for production through 3D printing.
@@ -181,8 +180,7 @@ The SPQR@Work software infrastructure is based on the ROS Indigo middleware \cit
 The navigation stack is based on particle filter based localization and mapping algorithms, provided by the ROS AMCL and GMapping \cite{Grisetti2007} packages, the latter implemented by one member of the laboratory RoCoCo.  Tha base motion planning task is accomplished using two different subsystems (see Fig.~\ref{fig:intro_navigation}):
 \begin{itemize}
  \item A global planner, which provides the global path to follow, based on the standard MoveBase ROS package;
- \item A custom-built local planner, which, given the global plan and a costmap, produces
-velocity commands to send to the mobile base controller.
+ \item A custom-built local planner, which, given the global plan and a costmap, produces velocity commands to send to the mobile base controller.
 \end{itemize}
 Our ad hoc local planner is based on artificial potential fields, designed for holonomic mobile robots.\\
 
@@ -216,7 +214,7 @@ accurate trajectories also in an crowded environment (Sec.~\ref{sec:manipulation
 
 \subsubsection{Object Recognition and Localization}\label{sec:object_rec}
 
-A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoCKIn competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015, prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
+A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoboCup competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015, prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
 
 \begin{figure}[t!]
 \begin{center}
