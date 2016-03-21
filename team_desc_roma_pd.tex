@@ -1,9 +1,5 @@
-\documentclass[conference]{IEEEtran}
+\documentclass{llncs}
 
-\IEEEoverridecommandlockouts                              % This command is only needed if 
-                                                          % you want to use the \thanks command
-
-\overrideIEEEmargins                                      % Needed to meet printer requirements.
 
 % See the \addtolength command later in the file to balance the column lengths
 % on the last page of the document
@@ -38,13 +34,16 @@
 % can use linebreaks \\ within to get better formatting as desired
 \title{SPQR@Work: Team Description Paper}
 
-\author{\IEEEauthorblockN{Marco Imperoli, Daniele Evangelista, Valerio Sanelli, Matteo Russo, Alberto Pretto and Daniele Nardi}\\
-%\IEEEauthorblockA{Department of Computer, Control, and Management Engineering\\``Antonio Ruberti``, Sapienza University of Rome, Italy.\\ Email: {\tt\small marcoimperoli@gmail.com, evangelista.1665872@studenti.uniroma1.it,\\ valerio.sanelli@gmail.com, matteo.russo@unicas.it, \{pretto,nardi\}@dis.uniroma1.it}\\
-\IEEEauthorblockA{Department of Computer, Control, and Management Engineering\\``Antonio Ruberti``, Sapienza University of Rome, Italy.\\ 
-Email: {\tt\small marcoimperoli@gmail.com, evangelista.1665872@studenti.uniroma1.it,}\\
-{\tt\small valerio.sanelli@gmail.com, matteo.russo@unicas.it, \{pretto,nardi\}@dis.uniroma1.it}\\
-Website: \url{http://www.dis.uniroma1.it/~labrococo/SPQRWork}}}
+\author{Marco Imperoli \and Daniele Evangelista \and Valerio Sanelli \and Matteo Russo\and\\ Alberto Pretto \and Daniele Nardi}
 
+\institute{ Department of Computer, Control and Management Engineering ``Antonio Ruberti``\\
+Sapienza University of Rome Via Ariosto 25, 00185, Rome, Italy\\
+\email{\{imperoli,pretto,nardi\}@dis.uniroma1.it}
+\email{evangelista.1665872@studenti.uniroma1.it}\\
+\email{valerio.sanelli@gmail.com}
+\email{matteo.russo@unicas.it}\\
+Website: \url{http://www.dis.uniroma1.it/~labrococo/SPQRWork}
+}
 
 % make the title area
 \maketitle
@@ -90,7 +89,7 @@ SPQR@Work goals are the following:
 \subsection{Involved Institutions}
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=\linewidth]{images/kuka.JPG}
+\includegraphics[width=0.6\linewidth]{images/kuka.JPG}
 \end{center}
 \caption{The SPQR@Work robot}\label{fig:robot}
 \end{figure}
@@ -168,7 +167,7 @@ A novel gripper design is under development. A preliminary draft of this gripper
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=0,width=0.7\linewidth,]{images/gripper_design.png}
+\includegraphics[angle=90,width=0.8\linewidth,]{images/gripper_design.png}
 \end{center}
 \caption{The new gripper design.}\label{fig:gripper_design}
 \end{figure}
@@ -214,11 +213,11 @@ accurate trajectories also in an crowded environment (Sec.~\ref{sec:manipulation
 
 \subsubsection{Object Recognition and Localization}\label{sec:object_rec}
 
-A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoboCup competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015, prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
+A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoboCup competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015,prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/d2co_00.png}
+\includegraphics[angle=0,width=0.5\linewidth]{images/d2co_00.png}
 \end{center}
 \caption{The raster models used in our algorithms are computed from the 3D CAD models of the objects.}\label{fig:obj_model}
 \end{figure}
@@ -226,7 +225,7 @@ The Directional Chamfer Distance (DCD) tensor encodes the minimum distance of an
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/d2co_01.png}
+\includegraphics[angle=0,width=0.7\linewidth]{images/dcd_building.pdf}
 \end{center}
 \caption{DCD tensor computation pipeline.}\label{fig:tensor}
 \end{figure}
@@ -237,7 +236,7 @@ D\textsuperscript{2}CO finally refines the object position employing a non-linea
 
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/d2co_02.png}
+\includegraphics[angle=0,width=0.8\linewidth]{images/d2co_02.png}
 \end{center}
 \caption{An example of object registration using the D\textsuperscript{2}CO algorithm.}\label{fig:sample_d2co}
 \end{figure}
@@ -270,7 +269,7 @@ In our experience, we found that the existing navigation frameworks (e.g., the p
 \begin{figure}[h!]
 \begin{center}
 \begin{minipage}[b]{0.6\linewidth}
-	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/navigation.png}\end{center}
+	\begin{center}\includegraphics[angle=0,width=0.8\linewidth]{images/navigation.png}\end{center}
 \end{minipage}\hfill
 \end{center}
 \caption{An example of navigation path (dark gray). The curved portion of the entire path is computed by the primary navigation planner. Our potential fields based planner is used for approaching the final target (red) and for sliding away from obstacles at the beginning of the navigation task (blue).}\label{fig:intro_navigation}
@@ -285,7 +284,7 @@ Moreover, in order to improve the whole navigation system, we adopt a robot odom
  \item Our current arm trajectory planning and control system rivals other state-of-the-art planning frameworks (e.g., MoveIt! \cite{moveitweb}). We aim to further improve this module and possibly to make it publicly available.
 \end{itemize}
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{splncs03}
 \bibliography{bibliography} 
 
 % that's all folks
