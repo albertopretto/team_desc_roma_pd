@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{moveitweb}
+{MoveIt!}, \url{http://moveit.ros.org/}
+
+\bibitem{rosweb}
+{ROS} - {R}obot {O}perating {S}ystem, \url{http://wiki.ros.org}
+
+\bibitem{Grisetti2007}
+Grisetti, G., Stachniss, C., Burgard, W.: Improved techniques for grid mapping
+  with rao-blackwellized particle filters. Trans. Rob.  23(1),  34--46 (Feb
+  2007)
+
+\bibitem{miap_icvs2015}
+Imperoli, M., Pretto, A.: {D\textsuperscript{2}CO}: Fast and robust
+  registration of {3D} textureless objects using the {Directional Chamfer
+  Distance}. In: Proc. of 10th International Conference on Computer Vision
+  Systems (ICVS 2015). pp. 316--328 (2015)
+
+\bibitem{prettoCASE2013}
+Pretto, A., Tonello, S., Menegatti, E.: Flexible 3d localization of planar
+  objects for industrial bin-picking with monocamera vision system. In: Proc.
+  of: IEEE International Conference on Automation Science and Engineering
+  (CASE). pp. 168 -- 175 (2013)
+
+\end{thebibliography}
