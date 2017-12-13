@@ -49,8 +49,8 @@ Website: \url{http://www.dis.uniroma1.it/~labrococo/SPQRWork}
 
 \begin{abstract}
 %\boldmath
-The SPQR@Work team is a spin-off of the S.P.Q.R. RoboCup team of the Department of Computer, Control, and Management Engineering “Antonio Ruberti” at Sapienza University of Rome, created in 2014 to participate at the 2014 RoCKIn@Work competition.\\
-This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2016 RoboCup competition event.
+The SPQR@Work team is a spin-off of the S.P.Q.R. RoboCup team of the Department of Computer, Control, and Management Engineering “Antonio Ruberti” at Sapienza University of Rome.\\
+This document describes the scientific background, the team members' competences and the employed robot hardware and software that the SPQR@Work team will exploit if it will be accepted to participate to the 2017 RoboCup competition event.
 \end{abstract}
 
 \section{Introduction}
@@ -88,9 +88,9 @@ SPQR@Work goals are the following:
 \subsection{Involved Institutions}
 \begin{figure}[t!]
 \begin{center}
-\includegraphics[width=0.8\linewidth]{images/kuka.JPG}
+\includegraphics[width=0.8\linewidth]{images/IMG_2049.JPG}
 \end{center}
-\caption{The SPQR@Work robot}\label{fig:robot}
+\caption{The SPQR@Work robot during the RoboCup 2016 setup stage.}\label{fig:robot}
 \end{figure}
 
 \subsubsection{RoCoCo} The laboratory RoCoCo (Cognitive Cooperating Robots) is located at DIAG (Dipartimento di Ingegneria Informatica, Automatica e Gestionale) of Sapienza University of Rome, Italy.
@@ -101,7 +101,7 @@ The research developed at RoCoCo laboratory is in the area of Artificial Intelli
 \subsubsection*{Daniele Evangelista}
 Daniele is currently attending the second year of the Master degree in Articial Intelligence and Robotics at Sapienza University, in Rome. 
 In October 2014 he got the bachelor degree in Informatics and Telecommunications engineering at University of Cassino. 
-He is also the co-founder and CEO of \emph{alibabyte software house S.r.l.s.}, an italian company mainly focused on web, desktop and mobile 
+He is also the co-founder and CEO of \emph{Alibabyte Software House S.r.l.s.}, an Italian company mainly focused on web, desktop and mobile 
 software development. His main interests are in Machine Learning and Artificial Intelligence in robotics applications.
 
 \subsubsection*{Marco Imperoli}
@@ -125,13 +125,14 @@ He received the Bachelor Degree in Computer Engineering at la Sapienza in 2013.
 He is mainly interested in robotics, artificial intelligence and 3D printing solutions, he is one of the developer of the project Homegrown RC\footnote{\url{http://www.homegrownrc.com}}.
 
 \subsubsection*{Luca Monorchio}
-Luca is a Master student of Artificial Intelligence and Robotics at la Sapienza, University of Rome. He received the Bachelor Degree in Computer Engineering at Università degli studi di RomaTre in 2014. He is mainly interested in navigation and localization on mobile robotics, artificial intelligence and adaptive algorithms.
+Luca is a Master student of Artificial Intelligence and Robotics at la Sapienza, University of Rome. He received the Bachelor Degree in Computer Engineering at Università degli Studi di RomaTre in 2014. He is mainly interested in navigation and localization on mobile robotics, artificial intelligence and adaptive algorithms.
 
 \subsubsection*{Francesco Chichi}
 Francesco is a Master student of Artificial Intelligence and Robotics at la Sapienza, University of Rome. He received the Bachelor Degree in Computer Science at la Sapienza in 2016. His main interests are in Artificial Intelligence in robotics applications and autonomous robotics.
 
 \subsubsection*{Giulio Turrisi}
 Giulio is currently a second year master student in Artificial Intelligence and Robotics, at la Sapienza University of Rome. He gained his bachelor degree in Computer Engineering from the University of Pisa in 2016, developing a thesis centered on Swarm Ingelligence. His main interests are control theory and autonomous robotics.
+
 %\subsubsection*{Roberto Capobianco}
 %Capobianco received the Master Degree in Artificial Intelligence and Robotics from the Department of Computer, 
 %Control and Management Engineering (DIAG) of Sapienza University of Rome. 
@@ -158,31 +159,30 @@ Nardi received the ``IJCAI-91 Publisher's Prize'' and the prize ``Intelligenza A
 \subsection{Past Events Participations}
 
 The team participated at the RoCKIn Camp in 2014 and 2015 and at the RoCKIn competition in 2014 and 2015. In the RoCKIn Camp 2014, ``SPQR@Work'' won in ex-aequo with another team the ``Best Practical in Perception'' award.
-
+In 2016 the team participated for the first time at the RoboCup competition.
 \section{Robot Description}
 
 \subsection{Hardware Configuration}
 
-The SPQR@Work robot (Fig.~\ref{fig:robot}) is a KUKA youBot with the following sensor suite:
+The SPQR@Work robot (Fig.~\ref{fig:robot}) is a modified Kuka youBot equipped with the following sensors and tools:
 
 \begin{itemize}
- \item A frontal Hokuyo laser scanner, to be used for navigation and obstacles avoidance tasks
- \item A Kinect RGB-D sensor: the area viewed by the kinect includes the working area of the arm, in order to perform object manipulation tasks without robot motions
- \item An on-board laptop running Linux Ubuntu 14.04, to be used to run all the software modules (e.g., navigation, object recognition, etc...). The internal youBot Intel Atom PC is not used.
- \item A color USB3 high-resolution camera on the 5th joint of the manipulator for accurate object localization
+ \item Two Hokuyo laser scanners to be used for navigation and obstacles avoidance tasks;
+ \item An Intel RealSense SR300 RGB-D sensor installed in the arm end effector to be used for object detection and localization tasks;
+ \item Two on-board computers, both running Linux Ubuntu 14.04 and the ROS Indigo Igloo middleware \cite{rosweb}: an internal Intel Nuc i7 in place of the original youBot Intel Atom PC, and an external Intel core-i7 laptop;
+ \item A custom built gripper (Fig. \ref{fig:gripper_design}) powered by two Robotis AX-12A servo motors;
+ \item An extra lithium battery to power the sensors and the servo motors;
+ \item A tray used to carry the objects.
 \end{itemize}
 
-The team is now actively working in improving the hardware configuration of the KUKA youBot, in particular modifications will involve both the sensors installed on the robot and the structural layout itself.\\
-A new Hokuyo laser scanner will be installed in the rear of the robot in order to improve navigation and obstacles avoidance.\\
-For the object recognition and localization a new sensor will replace the current Kinect RGB-D sensor: \emph{Intel realsense f200} (https://software.intel.com/en-us/realsense/f200camera).\\
-A novel gripper design is under development. A preliminary draft of this gripper is shown in Fig. \ref{fig:gripper_design}. The new mechanism is able to grasp bigger objects with a maximum finger opening equal to 135 mm. Motion is actuated by a Robotis AX-12A Servomotor, which offers higher torque when compared to the stock motor and allows for improved accuracy thanks to its embedded encoders and control. Most of the non-commercial parts of the novel design are optimized for production through 3D printing.
-\\Furthermore, the layout of the KUKA youBot base platform will be enhanced in order to increase the workspace.
+Most of the non-commercial parts of the novel design are optimized for production through 3D printing. The layout of the Kuka youBot has been modified in order to increase the robot's working area: the robot arm has been moved away from its original position in order to reach the objects placed on the platforms  in a more favorable configuration.\\
+The two on-board computers are synchronized using the ROS middleware \cite{rosweb}: a shared \texttt{roscore} process manages the communication between the two computer: the Internal Intel Nuc has in charge the navigation and the low-level and high-level planning tasks, while the external laptop is mainly used to perform the more computationally expensive object detection and localization algorithms.\\
 
 \begin{figure}[t!]
 \begin{center}
 \includegraphics[angle=90,width=0.8\linewidth,]{images/gripper_design.png}
 \end{center}
-\caption{The new gripper design.}\label{fig:gripper_design}
+\caption{The custom built gripper design.}\label{fig:gripper_design}
 \end{figure}
 
  
@@ -198,13 +198,13 @@ Our ad hoc local planner is based on artificial potential fields, designed for h
 
 We use a custom-built module also for the manipulation and the grasping tasks: the arm motion planner we propose is able to plan accurate trajectories assuming that the best way to grasp an object disposed in an crowded environment is to let the gripper follows a straight line in the Cartesian space towards the object of interest.\\
 
-Object recognition and localization is obtained using reliable algorithms that exploit both vision features and depth information (Sec.~\ref{sec:object_rec}). This module includes a pipeline of processing blocks (Fig.~\ref{fig:pipeline}): the pipeline includes processing blocks for sub-sampling, clustering, noise reduction, and 2D and 3D features detection and descriptors. The model matching step is performed associating the extracted features with features pre-computed from a rigid template (e.g., the CAD model) of the object. The result is a set of object candidates, that is refined using an novel object registration strategy. \\
+Object recognition and localization is obtained using reliable algorithms that exploit both visual and depth information. The processing blocks pipeline is reported in Fig.~\ref{fig:pipeline}. The first processing block selects a set of ``candidate'' regions from the input image, where each region might contain the searched object: we use here the Selective Search algorithm \cite{Uijlings13}. The second block validates the selected regions, discarding those regions that violate some given criteria (e.g., position, size, etc..). This block exploits priors such as object size, the platform position and size, etc \dots. A convolutional neural networks (CNN) is then applied to each validated image region to classify the objects. The CNN has been implemented using the TensorFlow library \cite{tensorflow2015-whitepaper} and it is trained using a set of images of the searched objects, framed from different point-of-views. The objects positions are finally refined using a custom built object registration strategy (Sec.~\ref{sec:object_rec}). \\
 
 The decision making module is based on a finite state machine implemented with the ROS Actionlib package.\\
 
 \begin{figure*}[t!]
 \begin{center}
-\includegraphics[angle=0,width=\linewidth]{images/pipeline.png}
+\includegraphics[angle=0,width=0.8\linewidth]{images/pipeline2.png}
 \end{center}
 \caption{The SPQR@Work object recognition and localization pipeline.}\label{fig:pipeline}
 \end{figure*}
@@ -212,10 +212,9 @@ The decision making module is based on a finite state machine implemented with t
 Currently, the SPQR@Work robot is able to:
 
 \begin{itemize}
- \item Localize itself and safely navigate toward a selected target area
- \item Detect QR code-like markers using vision
- \item Recognize and localize objects using RGB-D sensors, using the techniques proposed in \cite{miap_icvs2015} and \cite{prettoCASE2013}
- \item Perform simple visual-servoing and manipulation tasks (e.g., pick and place task, ``cutting a string'' task, \dots)
+ \item Localize itself and safely navigate toward a selected target area;{3D}
+ \item Recognize and localize objects using RGB-D sensors, using the techniques proposed in \cite{miap_arxiv2016}, \cite{miap_icvs2015} and \cite{prettoCASE2013};
+ \item Perform simple visual-servoing and manipulation tasks (e.g., pick and place tasks, ``cutting a string'' tasks, \dots).
 \end{itemize}
  
 \section{Research areas and Contributions}\label{sec:research}
@@ -226,14 +225,15 @@ accurate trajectories also in an crowded environment (Sec.~\ref{sec:manipulation
 
 \subsubsection{Object Recognition and Localization}\label{sec:object_rec}
 
-A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoboCup competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_icvs2015,prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}).
-
 \begin{figure}[t!]
 \begin{center}
 \includegraphics[angle=0,width=0.8\linewidth]{images/d2co_00.png}
 \end{center}
 \caption{The raster models used in our algorithms are computed from the 3D CAD models of the objects.}\label{fig:obj_model}
 \end{figure}
+
+A reliable and accurate object recognition system is an essential prerequisite to successfully compete in the RoboCup competitions. The SPQR@Work team members presented two robust and flexible vision systems for 3D localization of untextured objects for industrial robots \cite{miap_arxiv2016,miap_icvs2015,prettoCASE2013}. In particular, in \cite{miap_icvs2015} we presented a robust and efficient method for object detection and 3D pose estimation that exploits a novel edge-based registration algorithm we called Direct Directional Chamfer Optimization (D\textsuperscript{2}CO). D\textsuperscript{2}CO refines the object position employing a non-linear optimization procedure, where the cost being minimized is extracted directly from a 3D image tensor composed by a sequence of distance maps. No ICP-like iterative re-association steps are required: the data association is implicitly optimized while inferring the object pose. Our approach is able to handle textureless and partially occluded objects and does not require any off-line object learning step: just a 3D CAD model is needed (see Fig.~\ref{fig:obj_model}). 
+
 The Directional Chamfer Distance (DCD) tensor encodes the minimum distance of an image point to an edge point in a joint direction/location space. Unlike the Chamfer distance, the DCD takes into account also the edges directions (see Fig.~\ref{fig:tensor}).
 
 \begin{figure}[t!]
@@ -244,8 +244,7 @@ The Directional Chamfer Distance (DCD) tensor encodes the minimum distance of an
 \end{figure}
 
 We extract a set of object candidates by pre-computing the (projected) raster templates along with their image orientations for a large number of possible 3D locations; for each point, we lookup the DCD tensor, computing the template average distance. The templates are then sorted for increasing distances.\\
-
-D\textsuperscript{2}CO finally refines the object position employing a non-linear optimization procedure that minimizes a tensor-based cost function (e.g., see Fig.~\ref{fig:sample_d2co}). We use the LM algorithm with a Huber loss function in order to reduces the influence of outliers. During the optimization, both the (projected) points position and the (projected) points orientation are constantly updated.
+D\textsuperscript{2}CO finally refines the object position employing a non-linear optimization procedure that minimizes a tensor-based cost function (e.g., see Fig.~\ref{fig:sample_d2co}). We use the LM algorithm with a Huber loss function in order to reduces the influence of outliers. During the optimization, both the (projected) points position and the (projected) points orientation are constantly updated.\\
 
 \begin{figure}[t!]
 \begin{center}
@@ -254,6 +253,21 @@ D\textsuperscript{2}CO finally refines the object position employing a non-linea
 \caption{An example of object registration using the D\textsuperscript{2}CO algorithm.}\label{fig:sample_d2co}
 \end{figure}
 
+
+This approach has been improved and extended in \cite{miap_arxiv2016} by proposing a novel solution to the next-best-view (NBV) problem that aims to solve the detection ambiguities while maximizing the confidence and the localization accuracy (e.g., Fig.~\ref{fig:results_img_active}).
+
+
+\begin{figure*}[t!]
+\begin{center}
+\begin{minipage}[b]{0.49\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/results_img_active1.jpg}\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\linewidth}
+	\begin{center}\includegraphics[angle=0,width=\linewidth]{images/results_img_active2.jpg}\end{center}
+\end{minipage}\hfill
+\end{center}
+\caption{Some object detection and localization results obtained with the active perception strategy proposed in \cite{miap_arxiv2016} (in this examples we are detecting three types of objects).}\label{fig:results_img_active}
+\end{figure*}
 \subsubsection{Object Manipulation and Grasping}\label{sec:manipulation}
 
 Very often, the objects to be manipulated are randomly disposed in cluttered environments: a precise, smooth and safe arm trajectory planning is an essential requirement. The arm motion planner we propose is able to plan accurate trajectories assuming that the best way to grasp an object disposed in an crowded environment is to let the gripper follows a straight line in the Cartesian space towards the object of interest. Thanks to our obstacles avoidance system, each planned path is guaranteed to be free from collisions, and very accurate object grasping and placing are performed. In order to accomplish the manipulation task, we have defined a set of arm control points along with two different obstacles representations: spherical and box obstacles (e.g., see Fig.~\ref{fig:intro_manipulation}). Using these primitives, our trajectory planner can easily compute collision-free paths. 
@@ -293,7 +307,7 @@ Moreover, in order to improve the whole navigation system, we adopt a robot odom
 \section{Reusability and Relevance to Industrial Robotics}
 
 \begin{itemize}
- \item Some modules of the proposed object recognition and localization systems (Sec.~\ref{sec:object_rec}) is currently installed in seven real world industrial plants \footnote{E.g., https://www.youtube.com/watch?v=jqhuEjnDdfI}, with different setups, working with hundreds of different models and successfully guiding the manipulators to pick several hundreds of thousands of pieces per year. 
+ \item Some modules of the proposed object recognition and localization systems (Sec.~\ref{sec:object_rec}) is currently installed in seven real world industrial plants, with different setups, working with hundreds of different models and successfully guiding the manipulators to pick several hundreds of thousands of pieces per year. 
  \item Our current arm trajectory planning and control system rivals other state-of-the-art planning frameworks (e.g., MoveIt! \cite{moveitweb}). We aim to further improve this module and possibly to make it publicly available.
 \end{itemize}
 
